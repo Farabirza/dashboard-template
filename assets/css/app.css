@@ -1,0 +1,85 @@
+/*
+ * Layout state styles that Tailwind utilities can't express without a build step.
+ * State classes live on <html>:
+ *   .sidebar-collapsed  -> desktop icon-only sidebar
+ *   .sidebar-open       -> mobile off-canvas sidebar visible
+ */
+
+[x-cloak], [data-cloak] { display: none !important; }
+
+/* ---------- Sidebar ---------- */
+#sidebar {
+  transition: width .2s ease, transform .2s ease;
+}
+#main {
+  transition: padding-left .2s ease;
+}
+
+/* Mobile: off-canvas */
+@media (max-width: 1023.98px) {
+  #sidebar { transform: translateX(-100%); }
+  html.sidebar-open #sidebar { transform: translateX(0); }
+  html.sidebar-open #sidebar-backdrop { opacity: 1; pointer-events: auto; }
+}
+
+/* Desktop: collapsible to icons */
+@media (min-width: 1024px) {
+  #main { padding-left: 16rem; }
+  html.sidebar-collapsed #sidebar { width: 5rem; }
+  html.sidebar-collapsed #main { padding-left: 5rem; }
+  html.sidebar-collapsed #sidebar .sidebar-label,
+  html.sidebar-collapsed #sidebar .sidebar-heading,
+  html.sidebar-collapsed #sidebar .sidebar-chevron,
+  html.sidebar-collapsed #sidebar .sidebar-submenu,
+  html.sidebar-collapsed #sidebar .sidebar-extra { display: none !important; }
+  html.sidebar-collapsed #sidebar .sidebar-link { justify-content: center; }
+  html.sidebar-collapsed #sidebar .sidebar-brand { justify-content: center; }
+}
+
+/* Disable transitions on first paint so the restored state doesn't animate */
+html.no-transition *, html.no-transition *::before, html.no-transition *::after {
+  transition: none !important;
+}
+
+/* ---------- Submenu chevron ---------- */
+[data-collapse-toggle] .sidebar-chevron { transition: transform .2s ease; }
+[data-collapse-toggle][aria-expanded="true"] .sidebar-chevron { transform: rotate(90deg); }
+
+/* ---------- Dropdowns / modals ---------- */
+.dropdown-menu { transform-origin: top right; }
+.dropdown-menu.is-open { display: block; animation: pop-in .12s ease-out; }
+
+.modal.is-open { display: flex; }
+.modal.is-open .modal-panel { animation: modal-in .18s ease-out; }
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(8px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---------- Toasts ---------- */
+.toast { animation: toast-in .2s ease-out; }
+.toast.is-leaving { animation: toast-out .2s ease-in forwards; }
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes toast-out {
+  to { opacity: 0; transform: translateY(8px); }
+}
+
+/* ---------- Accordion ---------- */
+[data-accordion-toggle] .accordion-icon { transition: transform .2s ease; }
+[data-accordion-toggle][aria-expanded="true"] .accordion-icon { transform: rotate(180deg); }
+
+/* ---------- Scrollbar ---------- */
+.scrollbar-thin { scrollbar-width: thin; scrollbar-color: rgb(148 163 184 / .4) transparent; }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

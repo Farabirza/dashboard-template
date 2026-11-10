@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+  <script src="assets/js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17?plugins=forms"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body data-page="dashboard" data-title="Dashboard" class="bg-slate-50 font-sans text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300">
+
+  <div data-include="partials/sidebar.html"></div>
+
+  <div id="main" class="flex min-h-screen flex-col">
+    <div data-include="partials/navbar.html"></div>
+
+    <main class="flex-1 space-y-6 p-4 sm:p-6 lg:p-8">
+
+      <!-- Page header -->
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <nav class="mb-1 flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-slate-700 dark:hover:text-slate-200">Home</a>
+            <i data-lucide="chevron-right" class="h-3 w-3"></i>
+            <span class="text-slate-700 dark:text-slate-200">Overview</span>
+          </nav>
+          <h2 class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">Welcome back, John</h2>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Here's what's happening with your store today.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="relative">
+            <button type="button" data-dropdown-toggle="dd-range" class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
+              <i data-lucide="calendar" class="h-4 w-4 text-slate-400"></i>
+              <span data-range-label>Last 12 months</span>
+              <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400"></i>
+            </button>
+            <div id="dd-range" class="dropdown-menu absolute right-0 z-20 mt-2 hidden w-44 rounded-xl border border-slate-200 bg-white p-1.5 shadow-lg dark:border-slate-800 dark:bg-slate-900">
+              <button type="button" data-dropdown-close data-range="7" class="block w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-slate-100 dark:hover:bg-slate-800">Last 7 days</button>
+              <button type="button" data-dropdown-close data-range="30" class="block w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-slate-100 dark:hover:bg-slate-800">Last 30 days</button>
+              <button type="button" data-dropdown-close data-range="12" class="block w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-slate-100 dark:hover:bg-slate-800">Last 12 months</button>
+            </div>
+          </div>
+          <button type="button" data-toast="Report exported" data-toast-type="success" class="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-3 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500/40">
+            <i data-lucide="download" class="h-4 w-4"></i> Export
+          </button>
+        </div>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-card dark:border-slate-800 dark:bg-slate-900">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Total revenue</p>
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-400"><i data-lucide="wallet" class="h-5 w-5"></i></span>
+          </div>
+          <p class="mt-3 text-2xl font-semibold tabular-nums text-slate-900 dark:text-white">$84,254</p>
+          <p class="mt-1 flex items-center gap-1 text-xs"><span class="inline-flex items-center gap-0.5 font-medium text-emerald-600 dark:text-emerald-400"><i data-lucide="trending-up" class="h-3.5 w-3.5"></i>12.5%</span><span class="text-slate-400">vs last month</span></p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-card dark:border-slate-800 dark:bg-slate-900">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Orders</p>
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400"><i data-lucide="shopping-cart" class="h-5 w-5"></i></span>
+          </div>
+          <p class="mt-3 text-2xl font-semibold tabular-nums text-slate-900 dark:text-white">1,429</p>
+          <p class="mt-1 flex items-center gap-1 text-xs"><span class="inline-flex items-center gap-0.5 font-medium text-emerald-600 dark:text-emerald-400"><i data-lucide="trending-up" class="h-3.5 w-3.5"></i>8.2%</span><span class="text-slate-400">vs last month</span></p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-card dark:border-slate-800 dark:bg-slate-900">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-slate-500 dark:text-slate-400">New customers</p>
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-50 text-sky-600 dark:bg-sky-500/10 dark:text-sky-400"><i data-lucide="users" class="h-5 w-5"></i></span>
+          </div>
+          <p class="mt-3 text-2xl font-semibold tabular-nums text-slate-900 dark:text-white">326</p>
+          <p class="mt-1 flex items-center gap-1 text-xs"><span class="inline-flex items-center gap-0.5 font-medium text-red-600 dark:text-red-400"><i data-lucide="trending-down" class="h-3.5 w-3.5"></i>3.1%</span><span class="text-slate-400">vs last month</span></p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-card dark:border-slate-800 dark:bg-slate-900">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Conversion rate</p>
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400"><i data-lucide="percent" class="h-5 w-5"></i></span>
+          </div>
+          <p class="mt-3 text-2xl font-semibold tabular-nums text-slate-900 dark:text-white">3.24%</p>
+          <p class="mt-1 flex items-center gap-1 text-xs"><span class="inline-flex items-center gap-0.5 font-medium text-emerald-600 dark:text-emerald-400"><i data-lucide="trending-up" class="h-3.5 w-3.5"></i>0.4%</span><span class="text-slate-400">vs last month</span></p>
+        </div>
+      </div>
+
+      <!-- Charts row -->
+      <div class="grid gap-4 xl:grid-cols-3">
+        <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-card xl:col-span-2 dark:border-slate-800 dark:bg-slate-900">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <h3 class="text-base font-semibold text-slate-900 dark:text-white">Revenue overview</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400">Revenue vs. expenses</p>
+            </div>
+            <div data-tabs data-tabs-style="pills" class="inline-flex rounded-lg bg-slate-100 p-1 dark:bg-slate-800">
+              <button type="button" data-tab="rev-panel-monthly" data-period="monthly" aria-selected="true" class="rounded-md px-3 py-1 text-xs font-medium">Monthly</button>
+              <button type="button" data-tab="rev-panel-weekly" data-period="weekly" class="rounded-md px-3 py-1 text-xs font-medium">Weekly</button>
+            </div>
+          </div>
+          <div id="rev-panel-monthly" class="hidden"></div>
+          <div id="rev-panel-weekly" class="hidden"></div>
+          <div class="mt-4 h-72"><canvas id="chart-revenue" aria-label="Revenue chart" role="img"></canvas></div>
+        </section>
+
+        <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-card dark:border-slate-800 dark:bg-slate-900">
+          <h3 class="text-base font-semibold text-slate-900 dark:text-white">Traffic sources</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Sessions this month</p>
+          <div class="relative mt-4 h-52">
+            <canvas id="chart-traffic" aria-label="Traffic sources chart" role="img"></canvas>
+            <div class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
+              <span class="text-2xl font-semibold tabular-nums text-slate-900 dark:text-white">24.8k</span>
+              <span class="text-xs text-slate-500 dark:text-slate-400">sessions</span>
+            </div>
+          </div>
+          <ul id="traffic-legend" class="mt-5 space-y-2.5 text-sm"></ul>
+        </section>
+      </div>
+
+      <!-- Bottom row -->
+      <div class="grid gap-4 xl:grid-cols-3">
+        <!-- Recent orders -->
+        <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card xl:col-span-2 dark:border-slate-800 dark:bg-slate-900">
+          <div class="flex items-center justify-between px-5 py-4">
+            <h3 class="text-base font-semibold text-slate-900 dark:text-white">Recent orders</h3>
+            <a href="tables.html" class="text-sm font-medium text-primary-600 hover:text-primary-700 dark:text-primary-400">View all</a>
+          </div>
+          <div class="overflow-x-auto scrollbar-thin">
+            <table class="min-w-full divide-y divide-slate-200 text-sm dark:divide-slate-800">
+              <thead class="bg-slate-50 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 dark:bg-slate-800/50 dark:text-slate-400">
+                <tr><th class="px-5 py-3">Order</th><th class="px-5 py-3">Customer</th><th class="px-5 py-3">Date</th><th class="px-5 py-3">Status</th><th class="px-5 py-3 text-right">Amount</th></tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                <tr class="hover:bg-slate-50/70 dark:hover:bg-slate-800/40">
+                  <td class="whitespace-nowrap px-5 py-3 font-medium text-slate-900 dark:text-white">#1042</td>
+                  <td class="whitespace-nowrap px-5 py-3">Olivia Martin</td>
+                  <td class="whitespace-nowrap px-5 py-3 text-slate-500 dark:text-slate-400">Nov 10, 2026</td>
+                  <td class="px-5 py-3"><span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/20 dark:bg-emerald-500/10 dark:text-emerald-400 dark:ring-emerald-500/20"><span class="h-1.5 w-1.5 rounded-full bg-current"></span>Paid</span></td>
+                  <td class="whitespace-nowrap px-5 py-3 text-right font-medium tabular-nums text-slate-900 dark:text-white">$1,999.00</td>
+                </tr>
+                <tr class="hover:bg-slate-50/70 dark:hover:bg-slate-800/40">
+                  <td class="whitespace-nowrap px-5 py-3 font-medium text-slate-900 dark:text-white">#1041</td>
+                  <td class="whitespace-nowrap px-5 py-3">Jackson Lee</td>
+                  <td class="whitespace-nowrap px-5 py-3 text-slate-500 dark:text-slate-400">Nov 9, 2026</td>
+                  <td class="px-5 py-3"><span class="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700 ring-1 ring-inset ring-amber-600/20 dark:bg-amber-500/10 dark:text-amber-400 dark:ring-amber-500/20"><span class="h-1.5 w-1.5 rounded-full bg-current"></span>Pending</span></td>
+                  <td class="whitespace-nowrap px-5 py-3 text-right font-medium tabular-nums text-slate-900 dark:text-white">$39.00</td>
+                </tr>
+                <tr class="hover:bg-slate-50/70 dark:hover:bg-slate-800/40">
+                  <td class="whitespace-nowrap px-5 py-3 font-medium text-slate-900 dark:text-white">#1040</td>
+                  <td class="whitespace-nowrap px-5 py-3">Isabella Nguyen</td>
+                  <td class="whitespace-nowrap px-5 py-3 text-slate-500 dark:text-slate-400">Nov 9, 2026</td>
+                  <td class="px-5 py-3"><span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/20 dark:bg-emerald-500/10 dark:text-emerald-400 dark:ring-emerald-500/20"><span class="h-1.5 w-1.5 rounded-full bg-current"></span>Paid</span></td>
+                  <td class="whitespace-nowrap px-5 py-3 text-right font-medium tabular-nums text-slate-900 dark:text-white">$299.00</td>
+                </tr>
+                <tr class="hover:bg-slate-50/70 dark:hover:bg-slate-800/40">
+                  <td class="whitespace-nowrap px-5 py-3 font-medium text-slate-900 dark:text-white">#1039</td>
+                  <td class="whitespace-nowrap px-5 py-3">William Kim</td>
+                  <td class="whitespace-nowrap px-5 py-3 text-slate-500 dark:text-slate-400">Nov 8, 2026</td>
+                  <td class="px-5 py-3"><span class="inline-flex items-center gap-1.5 rounded-full bg-red-50 px-2 py-0.5 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/20 dark:bg-red-500/10 dark:text-red-400 dark:ring-red-500/20"><span class="h-1.5 w-1.5 rounded-full bg-current"></span>Refunded</span></td>
+                  <td class="whitespace-nowrap px-5 py-3 text-right font-medium tabular-nums text-slate-900 dark:text-white">$99.00</td>
+                </tr>
+                <tr class="hover:bg-slate-50/70 dark:hover:bg-slate-800/40">
+                  <td class="whitespace-nowrap px-5 py-3 font-medium text-slate-900 dark:text-white">#1038</td>
+                  <td class="whitespace-nowrap px-5 py-3">Sofia Davis</td>
+                  <td class="whitespace-nowrap px-5 py-3 text-slate-500 dark:text-slate-400">Nov 7, 2026</td>
+                  <td class="px-5 py-3"><span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/20 dark:bg-emerald-500/10 dark:text-emerald-400 dark:ring-emerald-500/20"><span class="h-1.5 w-1.5 rounded-full bg-current"></span>Paid</span></td>
+                  <td class="whitespace-nowrap px-5 py-3 text-right font-medium tabular-nums text-slate-900 dark:text-white">$450.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Weekly orders + top products -->
+        <div class="space-y-4">
+          <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-card dark:border-slate-800 dark:bg-slate-900">
+            <h3 class="text-base font-semibold text-slate-900 dark:text-white">Orders this week</h3>
+            <div class="mt-3 h-40"><canvas id="chart-orders" aria-label="Weekly orders chart" role="img"></canvas></div>
+          </section>
+
+          <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-card dark:border-slate-800 dark:bg-slate-900">
+            <h3 class="text-base font-semibold text-slate-900 dark:text-white">Top products</h3>
+            <ul class="mt-4 space-y-4 text-sm">
+              <li>
+                <div class="flex justify-between"><span class="font-medium text-slate-700 dark:text-slate-200">Wireless Headphones</span><span class="tabular-nums text-slate-500">$12.4k</span></div>
+                <div class="mt-1.5 h-1.5 rounded-full bg-slate-100 dark:bg-slate-800"><div class="h-1.5 rounded-full bg-primary-500" style="width: 82%"></div></div>
+              </li>
+              <li>
+                <div class="flex justify-between"><span class="font-medium text-slate-700 dark:text-slate-200">Smart Watch</span><span class="tabular-nums text-slate-500">$9.1k</span></div>
+                <div class="mt-1.5 h-1.5 rounded-full bg-slate-100 dark:bg-slate-800"><div class="h-1.5 rounded-full bg-primary-500" style="width: 64%"></div></div>
+              </li>
+              <li>
+                <div class="flex justify-between"><span class="font-medium text-slate-700 dark:text-slate-200">Mechanical Keyboard</span><span class="tabular-nums text-slate-500">$6.7k</span></div>
+                <div class="mt-1.5 h-1.5 rounded-full bg-slate-100 dark:bg-slate-800"><div class="h-1.5 rounded-full bg-primary-500" style="width: 47%"></div></div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <div data-include="partials/footer.html"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/charts.js"></script>
+  <script>
+    App.ready(function ($) {
+      var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      var datasets = {
+        monthly: {
+          labels: months,
+          revenue: [42, 48, 45, 56, 61, 58, 66, 72, 69, 78, 82, 84],
+          expenses: [28, 30, 31, 33, 36, 35, 38, 40, 41, 43, 45, 46],
+        },
+        weekly: {
+          labels: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8'],
+          revenue: [18, 21, 19, 24, 22, 26, 25, 28],
+          expenses: [11, 12, 12, 13, 13, 14, 14, 15],
+        },
+      };
+      var period = 'monthly';
+
+      // Revenue line chart
+      var revenue = App.chart('#chart-revenue', function (t) {
+        var d = datasets[period];
+        return {
+          type: 'line',
+          data: {
+            labels: d.labels,
+            datasets: [
+              {
+                label: 'Revenue', data: d.revenue, borderColor: t.colors[0], borderWidth: 2, tension: 0.35,
+                pointRadius: 0, pointHoverRadius: 5, fill: true,
+                backgroundColor: function (ctx) {
+                  var area = ctx.chart.chartArea;
+                  if (!area) return 'transparent';
+                  var g = ctx.chart.ctx.createLinearGradient(0, area.top, 0, area.bottom);
+                  g.addColorStop(0, t.alpha(t.colors[0], t.dark ? 0.3 : 0.2));
+                  g.addColorStop(1, t.alpha(t.colors[0], 0));
+                  return g;
+                },
+              },
+              { label: 'Expenses', data: d.expenses, borderColor: t.colors[3], borderWidth: 2, borderDash: [4, 4], tension: 0.35, pointRadius: 0, pointHoverRadius: 5 },
+            ],
+          },
+          options: {
+            interaction: { mode: 'index', intersect: false },
+            plugins: {
+              legend: { position: 'top', align: 'end' },
+              tooltip: { callbacks: { label: function (c) { return ' ' + c.dataset.label + ': $' + c.parsed.y + 'k'; } } },
+            },
+            scales: {
+              x: { grid: { display: false } },
+              y: { border: { display: false }, ticks: { callback: function (v) { return '$' + v + 'k'; } } },
+            },
+          },
+        };
+      });
+
+      $('[data-period]').on('click', function () {
+        period = $(this).data('period');
+        var d = datasets[period];
+        var c = revenue.chart;
+        c.data.labels = d.labels;
+        c.data.datasets[0].data = d.revenue;
+        c.data.datasets[1].data = d.expenses;
+        c.update();
+      });
+
+      // Traffic doughnut + custom legend
+      var traffic = { labels: ['Organic', 'Direct', 'Social', 'Referral'], data: [42, 26, 20, 12] };
+      App.chart('#chart-traffic', function (t) {
+        $('#traffic-legend').html($.map(traffic.labels, function (l, i) {
+          return '<li class="flex items-center justify-between"><span class="flex items-center gap-2 text-slate-600 dark:text-slate-300">' +
+            '<span class="h-2.5 w-2.5 rounded-full" style="background:' + t.colors[i] + '"></span>' + l + '</span>' +
+            '<span class="font-medium tabular-nums text-slate-900 dark:text-white">' + traffic.data[i] + '%</span></li>';
+        }).join(''));
+        return {
+          type: 'doughnut',
+          data: { labels: traffic.labels, datasets: [{ data: traffic.data, backgroundColor: t.colors.slice(0, 4), borderColor: t.surface, borderWidth: 3, hoverOffset: 4 }] },
+          options: { cutout: '74%', plugins: { legend: { display: false } } },
+        };
+      });
+
+      // Weekly orders bar chart
+      App.chart('#chart-orders', function (t) {
+        return {
+          type: 'bar',
+          data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{ label: 'Orders', data: [32, 45, 38, 52, 61, 74, 48], backgroundColor: t.colors[0], borderRadius: 6, maxBarThickness: 22 }],
+          },
+          options: {
+            plugins: { legend: { display: false } },
+            scales: { x: { grid: { display: false } }, y: { display: false } },
+          },
+        };
+      });
+
+      // Date range dropdown (demo)
+      $('[data-range]').on('click', function () {
+        $('[data-range-label]').text($(this).text());
+        App.toast('Showing ' + $(this).text().toLowerCase(), 'info');
+      });
+    });
+  </script>
+</body>
+</html>

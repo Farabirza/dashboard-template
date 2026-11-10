@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Components</title>
+  <script src="assets/js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17?plugins=forms"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body data-page="components" data-title="Components" class="bg-slate-50 font-sans text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300">
+
+  <div data-include="partials/sidebar.html"></div>
+
+  <div id="main" class="flex min-h-screen flex-col">
+    <div data-include="partials/navbar.html"></div>
+
+    <main class="flex-1 p-4 sm:p-6 lg:p-8">
+      <div class="mb-6">
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">UI components</h2>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Copy-paste reference. Use <b>Code</b> to view a block's markup or <b>Copy</b> to put it on your clipboard.</p>
+      </div>
+
+      <div class="grid gap-6 xl:grid-cols-[1fr_12rem]">
+        <div id="component-list" class="min-w-0 space-y-6">
+
+          <!-- Buttons -->
+          <section id="c-buttons" data-component="Buttons">
+            <div data-snippet class="flex flex-wrap items-center gap-3">
+              <button type="button" class="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500/40">Primary</button>
+              <button type="button" class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">Secondary</button>
+              <button type="button" class="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ghost</button>
+              <button type="button" class="inline-flex items-center gap-2 rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700">Danger</button>
+              <button type="button" class="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-emerald-700"><i data-lucide="check" class="h-4 w-4"></i> With icon</button>
+              <button type="button" disabled class="inline-flex cursor-not-allowed items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white opacity-50">Disabled</button>
+              <button type="button" class="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white opacity-80" disabled>
+                <svg class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-opacity=".25" stroke-width="4"/><path d="M22 12a10 10 0 0 0-10-10" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+                Loading
+              </button>
+              <button type="button" class="rounded-lg bg-primary-600 p-2 text-white hover:bg-primary-700" aria-label="Add"><i data-lucide="plus" class="h-4 w-4"></i></button>
+              <span class="mx-1 h-6 w-px bg-slate-200 dark:bg-slate-700"></span>
+              <button type="button" class="rounded-md bg-primary-600 px-2.5 py-1 text-xs font-medium text-white hover:bg-primary-700">Small</button>
+              <button type="button" class="rounded-lg bg-primary-600 px-5 py-2.5 text-base font-medium text-white hover:bg-primary-700">Large</button>
+              <div class="inline-flex rounded-lg shadow-sm">
+                <button type="button" class="rounded-l-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700">Day</button>
+                <button type="button" class="-ml-px border border-slate-200 bg-white px-3 py-2 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700">Week</button>
+                <button type="button" class="-ml-px rounded-r-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700">Month</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Badges -->
+          <section id="c-badges" data-component="Badges">
+            <div data-snippet class="flex flex-wrap items-center gap-2">
+              <span class="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-300">Default</span>
+              <span class="inline-flex items-center rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-medium text-primary-700 ring-1 ring-inset ring-primary-600/20 dark:bg-primary-500/10 dark:text-primary-300 dark:ring-primary-500/20">Primary</span>
+              <span class="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/20 dark:bg-emerald-500/10 dark:text-emerald-400 dark:ring-emerald-500/20">Success</span>
+              <span class="inline-flex items-center rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-700 ring-1 ring-inset ring-amber-600/20 dark:bg-amber-500/10 dark:text-amber-400 dark:ring-amber-500/20">Warning</span>
+              <span class="inline-flex items-center rounded-full bg-red-50 px-2.5 py-0.5 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/20 dark:bg-red-500/10 dark:text-red-400 dark:ring-red-500/20">Danger</span>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400"><span class="h-1.5 w-1.5 rounded-full bg-current"></span>With dot</span>
+              <span class="inline-flex items-center gap-1 rounded-md bg-sky-50 px-2 py-0.5 text-xs font-medium text-sky-700 dark:bg-sky-500/10 dark:text-sky-400">Removable <button type="button" class="rounded hover:bg-sky-100 dark:hover:bg-sky-500/20" aria-label="Remove"><i data-lucide="x" class="h-3 w-3"></i></button></span>
+            </div>
+          </section>
+
+          <!-- Alerts -->
+          <section id="c-alerts" data-component="Alerts">
+            <div data-snippet class="space-y-3">
+              <div data-dismissible class="flex gap-3 rounded-xl border border-sky-200 bg-sky-50 p-4 text-sm text-sky-800 dark:border-sky-500/20 dark:bg-sky-500/10 dark:text-sky-300" role="alert">
+                <i data-lucide="info" class="mt-0.5 h-5 w-5 shrink-0"></i>
+                <div class="flex-1"><p class="font-semibold">Heads up</p><p class="mt-0.5 text-sky-700 dark:text-sky-300/80">A new software update is available.</p></div>
+                <button type="button" data-dismiss class="-m-1 h-fit rounded-md p-1 hover:bg-sky-100 dark:hover:bg-sky-500/20" aria-label="Dismiss"><i data-lucide="x" class="h-4 w-4"></i></button>
+              </div>
+              <div data-dismissible class="flex gap-3 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-800 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300" role="alert">
+                <i data-lucide="check-circle-2" class="mt-0.5 h-5 w-5 shrink-0"></i>
+                <p class="flex-1">Your changes have been saved successfully.</p>
+                <button type="button" data-dismiss class="-m-1 h-fit rounded-md p-1 hover:bg-emerald-100 dark:hover:bg-emerald-500/20" aria-label="Dismiss"><i data-lucide="x" class="h-4 w-4"></i></button>
+              </div>
+              <div data-dismissible class="flex gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300" role="alert">
+                <i data-lucide="alert-triangle" class="mt-0.5 h-5 w-5 shrink-0"></i>
+                <p class="flex-1">Your trial ends in 3 days.</p>
+                <button type="button" data-dismiss class="-m-1 h-fit rounded-md p-1 hover:bg-amber-100 dark:hover:bg-amber-500/20" aria-label="Dismiss"><i data-lucide="x" class="h-4 w-4"></i></button>
+              </div>
+              <div data-dismissible class="flex gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300" role="alert">
+                <i data-lucide="x-circle" class="mt-0.5 h-5 w-5 shrink-0"></i>
+                <p class="flex-1">There were 2 errors with your submission.</p>
+                <button type="button" data-dismiss class="-m-1 h-fit rounded-md p-1 hover:bg-red-100 dark:hover:bg-red-500/20" aria-label="Dismiss"><i data-lucide="x" class="h-4 w-4"></i></button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Cards -->
+          <section id="c-cards" data-component="Cards">
+            <div data-snippet class="grid gap-4 md:grid-cols-3">
+              <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-card dark:border-slate-800 dark:bg-slate-900">
+                <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Stat card</p>
+                <p class="mt-2 text-2xl font-semibold tabular-nums text-slate-900 dark:text-white">$12,450</p>
+                <p class="mt-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">+4.6% this week</p>
+              </div>
+              <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card dark:border-slate-800 dark:bg-slate-900">
+                <div class="border-b border-slate-200 px-5 py-3 text-sm font-semibold text-slate-900 dark:border-slate-800 dark:text-white">Card with header</div>
+                <div class="p-5 text-sm text-slate-600 dark:text-slate-400">Body content goes here. Use for grouped settings or details.</div>
+                <div class="flex justify-end border-t border-slate-200 bg-slate-50 px-5 py-3 dark:border-slate-800 dark:bg-slate-800/40"><button type="button" class="text-sm font-medium text-primary-600 dark:text-primary-400">Action</button></div>
+              </div>
+              <div class="rounded-2xl bg-gradient-to-br from-primary-600 to-violet-600 p-5 text-white shadow-card">
+                <i data-lucide="sparkles" class="h-6 w-6"></i>
+                <p class="mt-3 font-semibold">Upgrade to Pro</p>
+                <p class="mt-1 text-sm text-white/80">Unlock advanced reports and team seats.</p>
+                <button type="button" class="mt-4 rounded-lg bg-white/15 px-3 py-1.5 text-sm font-medium hover:bg-white/25">Learn more</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Modal -->
+          <section id="c-modal" data-component="Modal">
+            <div data-snippet>
+              <button type="button" data-modal-open="demo-modal" class="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-700">Open modal</button>
+              <button type="button" id="demo-confirm" class="ml-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">App.confirm()</button>
+
+              <div id="demo-modal" class="modal fixed inset-0 z-[60] hidden items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title">
+                <div class="modal-panel w-full max-w-md rounded-2xl bg-white shadow-xl dark:bg-slate-900 dark:ring-1 dark:ring-slate-800">
+                  <div class="flex items-center justify-between border-b border-slate-200 px-6 py-4 dark:border-slate-800">
+                    <h3 id="demo-modal-title" class="text-base font-semibold text-slate-900 dark:text-white">Modal title</h3>
+                    <button type="button" data-modal-close class="rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-800" aria-label="Close"><i data-lucide="x" class="h-5 w-5"></i></button>
+                  </div>
+                  <div class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400">Close with the X, the Cancel button, the Esc key or by clicking the backdrop. Add <code>data-static="true"</code> to disable backdrop close.</div>
+                  <div class="flex justify-end gap-2 border-t border-slate-200 px-6 py-4 dark:border-slate-800">
+                    <button type="button" data-modal-close class="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">Cancel</button>
+                    <button type="button" data-modal-close data-toast="Confirmed!" data-toast-type="success" class="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-700">Confirm</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Dropdown -->
+          <section id="c-dropdown" data-component="Dropdown">
+            <div data-snippet class="flex h-44 items-start">
+              <div class="relative">
+                <button type="button" data-dropdown-toggle="demo-dropdown" aria-expanded="false" class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+                  Options <i data-lucide="chevron-down" class="h-4 w-4"></i>
+                </button>
+                <div id="demo-dropdown" class="dropdown-menu absolute left-0 z-20 mt-2 hidden w-48 origin-top-left rounded-xl border border-slate-200 bg-white p-1.5 shadow-lg dark:border-slate-800 dark:bg-slate-900">
+                  <a href="#" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800"><i data-lucide="pencil" class="h-4 w-4"></i> Edit</a>
+                  <a href="#" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800"><i data-lucide="copy" class="h-4 w-4"></i> Duplicate</a>
+                  <div class="my-1 h-px bg-slate-100 dark:bg-slate-800"></div>
+                  <a href="#" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-500/10"><i data-lucide="trash-2" class="h-4 w-4"></i> Delete</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tabs -->
+          <section id="c-tabs" data-component="Tabs">
+            <div data-snippet class="space-y-6">
+              <div>
+                <div data-tabs class="flex gap-6 border-b border-slate-200 dark:border-slate-800" role="tablist">
+                  <button type="button" data-tab="tab-account" aria-selected="true" class="-mb-px border-b-2 pb-3 text-sm font-medium" role="tab">Account</button>
+                  <button type="button" data-tab="tab-security" class="-mb-px border-b-2 pb-3 text-sm font-medium" role="tab">Security</button>
+                  <button type="button" data-tab="tab-billing" class="-mb-px border-b-2 pb-3 text-sm font-medium" role="tab">Billing</button>
+                </div>
+                <div id="tab-account" class="pt-4 text-sm text-slate-600 dark:text-slate-400">Account settings panel.</div>
+                <div id="tab-security" class="hidden pt-4 text-sm text-slate-600 dark:text-slate-400">Security settings panel.</div>
+                <div id="tab-billing" class="hidden pt-4 text-sm text-slate-600 dark:text-slate-400">Billing settings panel.</div>
+              </div>
+              <div>
+                <div data-tabs data-tabs-style="pills" class="inline-flex rounded-lg bg-slate-100 p-1 dark:bg-slate-800" role="tablist">
+                  <button type="button" data-tab="pill-1" aria-selected="true" class="rounded-md px-3 py-1.5 text-sm font-medium" role="tab">Overview</button>
+                  <button type="button" data-tab="pill-2" class="rounded-md px-3 py-1.5 text-sm font-medium" role="tab">Analytics</button>
+                  <button type="button" data-tab="pill-3" class="rounded-md px-3 py-1.5 text-sm font-medium" role="tab">Reports</button>
+                </div>
+                <div id="pill-1" class="pt-4 text-sm text-slate-600 dark:text-slate-400">Pill tab one.</div>
+                <div id="pill-2" class="hidden pt-4 text-sm text-slate-600 dark:text-slate-400">Pill tab two.</div>
+                <div id="pill-3" class="hidden pt-4 text-sm text-slate-600 dark:text-slate-400">Pill tab three.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Accordion -->
+          <section id="c-accordion" data-component="Accordion">
+            <div data-snippet>
+              <div data-accordion="single" class="divide-y divide-slate-200 rounded-xl border border-slate-200 dark:divide-slate-800 dark:border-slate-800">
+                <div>
+                  <button type="button" data-accordion-toggle="acc-1" aria-expanded="true" class="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-slate-900 dark:text-white">
+                    How do I add a new page? <i data-lucide="chevron-down" class="accordion-icon h-4 w-4 text-slate-400"></i>
+                  </button>
+                  <div id="acc-1" class="px-4 pb-4 text-sm text-slate-600 dark:text-slate-400">Copy <code>blank.html</code>, set <code>data-page</code> and <code>data-title</code> on the body, and add a link in <code>partials/sidebar.html</code>.</div>
+                </div>
+                <div>
+                  <button type="button" data-accordion-toggle="acc-2" aria-expanded="false" class="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-slate-900 dark:text-white">
+                    How do I change the brand color? <i data-lucide="chevron-down" class="accordion-icon h-4 w-4 text-slate-400"></i>
+                  </button>
+                  <div id="acc-2" class="hidden px-4 pb-4 text-sm text-slate-600 dark:text-slate-400">Edit the <code>primary</code> palette in <code>assets/js/tailwind.config.js</code>.</div>
+                </div>
+                <div>
+                  <button type="button" data-accordion-toggle="acc-3" aria-expanded="false" class="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-slate-900 dark:text-white">
+                    Can I use it without a server? <i data-lucide="chevron-down" class="accordion-icon h-4 w-4 text-slate-400"></i>
+                  </button>
+                  <div id="acc-3" class="hidden px-4 pb-4 text-sm text-slate-600 dark:text-slate-400">Partials are loaded with AJAX, so open pages over http:// (Laragon, VS Code Live Server, etc.).</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Toasts -->
+          <section id="c-toasts" data-component="Toasts">
+            <div data-snippet class="flex flex-wrap gap-2">
+              <button type="button" data-toast="Saved successfully" data-toast-type="success" class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700">Success</button>
+              <button type="button" data-toast="Something went wrong" data-toast-type="error" class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700">Error</button>
+              <button type="button" data-toast="Storage is almost full" data-toast-type="warning" class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700">Warning</button>
+              <button type="button" data-toast="New version available" data-toast-type="info" class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700">Info</button>
+            </div>
+          </section>
+
+          <!-- Avatars -->
+          <section id="c-avatars" data-component="Avatars">
+            <div data-snippet class="flex flex-wrap items-center gap-6">
+              <div class="flex items-center gap-3">
+                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-700 dark:bg-primary-500/15 dark:text-primary-300">AB</span>
+                <span class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-sm font-semibold text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300">CD</span>
+                <span class="relative flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-base font-semibold text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">EF<span class="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-slate-900"></span></span>
+              </div>
+              <div class="flex -space-x-2">
+                <span class="flex h-9 w-9 items-center justify-center rounded-full bg-sky-100 text-xs font-semibold text-sky-700 ring-2 ring-white dark:bg-sky-500/20 dark:text-sky-300 dark:ring-slate-900">OM</span>
+                <span class="flex h-9 w-9 items-center justify-center rounded-full bg-rose-100 text-xs font-semibold text-rose-700 ring-2 ring-white dark:bg-rose-500/20 dark:text-rose-300 dark:ring-slate-900">JL</span>
+                <span class="flex h-9 w-9 items-center justify-center rounded-full bg-violet-100 text-xs font-semibold text-violet-700 ring-2 ring-white dark:bg-violet-500/20 dark:text-violet-300 dark:ring-slate-900">IN</span>
+                <span class="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold text-slate-600 ring-2 ring-white dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-900">+5</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Progress & spinners -->
+          <section id="c-progress" data-component="Progress &amp; loaders">
+            <div data-snippet class="space-y-5">
+              <div>
+                <div class="mb-1.5 flex justify-between text-sm"><span class="font-medium">Storage</span><span class="tabular-nums text-slate-500">68%</span></div>
+                <div class="h-2 rounded-full bg-slate-100 dark:bg-slate-800"><div class="h-2 rounded-full bg-primary-600" style="width: 68%"></div></div>
+              </div>
+              <div class="flex items-center gap-6">
+                <svg class="h-6 w-6 animate-spin text-primary-600" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-opacity=".25" stroke-width="4"/><path d="M22 12a10 10 0 0 0-10-10" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+                <div class="flex gap-1"><span class="h-2 w-2 animate-bounce rounded-full bg-primary-600 [animation-delay:-.3s]"></span><span class="h-2 w-2 animate-bounce rounded-full bg-primary-600 [animation-delay:-.15s]"></span><span class="h-2 w-2 animate-bounce rounded-full bg-primary-600"></span></div>
+              </div>
+              <div class="flex animate-pulse items-center gap-4">
+                <div class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-800"></div>
+                <div class="flex-1 space-y-2"><div class="h-3 w-1/3 rounded bg-slate-200 dark:bg-slate-800"></div><div class="h-3 w-2/3 rounded bg-slate-200 dark:bg-slate-800"></div></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tooltip -->
+          <section id="c-tooltip" data-component="Tooltip">
+            <div data-snippet class="flex gap-4 pt-8">
+              <div class="group relative inline-block">
+                <button type="button" class="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700">Hover me</button>
+                <span role="tooltip" class="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-slate-900 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 dark:bg-slate-700">Tooltip text</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Breadcrumb & pagination -->
+          <section id="c-navigation" data-component="Breadcrumb &amp; pagination">
+            <div data-snippet class="space-y-5">
+              <nav class="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400" aria-label="Breadcrumb">
+                <a href="#" class="hover:text-slate-700 dark:hover:text-slate-200"><i data-lucide="home" class="h-4 w-4"></i></a>
+                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                <a href="#" class="hover:text-slate-700 dark:hover:text-slate-200">Projects</a>
+                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                <span class="font-medium text-slate-900 dark:text-white">Settings</span>
+              </nav>
+              <nav class="flex items-center gap-1" aria-label="Pagination">
+                <a href="#" class="inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800"><i data-lucide="chevron-left" class="h-4 w-4"></i></a>
+                <a href="#" class="inline-flex h-9 w-9 items-center justify-center rounded-lg text-sm hover:bg-slate-100 dark:hover:bg-slate-800">1</a>
+                <a href="#" aria-current="page" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-primary-600 text-sm font-medium text-white">2</a>
+                <a href="#" class="inline-flex h-9 w-9 items-center justify-center rounded-lg text-sm hover:bg-slate-100 dark:hover:bg-slate-800">3</a>
+                <span class="px-1 text-slate-400">…</span>
+                <a href="#" class="inline-flex h-9 w-9 items-center justify-center rounded-lg text-sm hover:bg-slate-100 dark:hover:bg-slate-800">12</a>
+                <a href="#" class="inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800"><i data-lucide="chevron-right" class="h-4 w-4"></i></a>
+              </nav>
+            </div>
+          </section>
+
+          <!-- Empty state -->
+          <section id="c-empty" data-component="Empty state">
+            <div data-snippet class="flex flex-col items-center rounded-xl border-2 border-dashed border-slate-200 px-6 py-12 text-center dark:border-slate-800">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"><i data-lucide="inbox" class="h-6 w-6"></i></span>
+              <h4 class="mt-4 text-sm font-semibold text-slate-900 dark:text-white">No projects yet</h4>
+              <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Get started by creating your first project.</p>
+              <button type="button" class="mt-5 inline-flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-700"><i data-lucide="plus" class="h-4 w-4"></i> New project</button>
+            </div>
+          </section>
+        </div>
+
+        <!-- On this page -->
+        <aside class="hidden xl:block">
+          <div class="sticky top-24">
+            <p class="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">On this page</p>
+            <ul id="component-toc" class="space-y-1.5 text-sm"></ul>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <div data-include="partials/footer.html"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    // Capture each snippet's original markup BEFORE icons/tabs mutate it.
+    $(function () {
+      function dedent(html) {
+        var lines = html.replace(/^\n+|\s+$/g, '').split('\n');
+        // outerHTML's first line has no leading whitespace, so measure from line 2
+        var rest = lines.slice(1).filter(function (l) { return l.trim(); });
+        if (!rest.length) return lines.join('\n');
+        // closing tag sits one level shallower than children: use it as the base indent
+        var indent = Math.min.apply(null, rest.map(function (l) { return l.match(/^\s*/)[0].length; }));
+        return [lines[0]].concat(lines.slice(1).map(function (l) { return l.slice(Math.min(indent, l.match(/^\s*/)[0].length)); })).join('\n');
+      }
+      $('[data-snippet]').each(function () {
+        var $s = $(this);
+        $s.data('source', dedent($s.prop('outerHTML').replace(/ data-snippet(="")?/, '')));
+      });
+
+      // Wrap each section in a card with a header + code toggle
+      $('[data-component]').each(function (i) {
+        var $sec = $(this);
+        var name = $sec.data('component');
+        var $snippet = $sec.find('[data-snippet]');
+        $sec.addClass('scroll-mt-24 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card dark:border-slate-800 dark:bg-slate-900');
+        var $head = $(
+          '<div class="flex items-center justify-between border-b border-slate-200 px-5 py-3 dark:border-slate-800">' +
+          '  <h3 class="text-sm font-semibold text-slate-900 dark:text-white"></h3>' +
+          '  <div class="flex gap-1">' +
+          '    <button type="button" data-code-toggle class="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200"><i data-lucide="code-2" class="h-3.5 w-3.5"></i>Code</button>' +
+          '    <button type="button" data-code-copy class="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200"><i data-lucide="copy" class="h-3.5 w-3.5"></i>Copy</button>' +
+          '  </div>' +
+          '</div>'
+        );
+        $head.find('h3').text(name);
+        var $body = $('<div class="p-5"></div>');
+        var $code = $('<pre class="hidden max-h-96 overflow-auto border-t border-slate-200 bg-slate-950 p-4 text-xs leading-relaxed text-slate-200 scrollbar-thin dark:border-slate-800"><code></code></pre>');
+        $code.find('code').text($snippet.data('source'));
+        $snippet.wrap($body);
+        $sec.prepend($head).append($code);
+
+        $('#component-toc').append(
+          $('<li><a class="text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"></a></li>')
+            .find('a').attr('href', '#' + this.id).text(name).end()
+        );
+      });
+
+      $(document).on('click', '[data-code-toggle]', function () {
+        $(this).closest('[data-component]').children('pre').toggleClass('hidden');
+      });
+
+      $(document).on('click', '[data-code-copy]', function () {
+        var text = $(this).closest('[data-component]').find('[data-snippet]').data('source');
+        var done = function () { App.toast('Copied to clipboard', 'success', { duration: 1800 }); };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(done);
+        } else {
+          var $t = $('<textarea class="fixed -left-[9999px]"></textarea>').val(text).appendTo('body');
+          $t[0].select(); document.execCommand('copy'); $t.remove(); done();
+        }
+      });
+    });
+
+    App.ready(function ($) {
+      $('#demo-confirm').on('click', function () {
+        App.confirm({ title: 'Archive project?', message: 'You can restore it later from the archive.', confirmText: 'Archive', danger: false })
+          .then(function (ok) { App.toast(ok ? 'Project archived' : 'Cancelled', ok ? 'success' : 'info'); });
+      });
+    });
+  </script>
+</body>
+</html>

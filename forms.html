@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forms</title>
+  <script src="assets/js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17?plugins=forms"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body data-page="forms" data-title="Forms" class="bg-slate-50 font-sans text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300">
+
+  <div data-include="partials/sidebar.html"></div>
+
+  <div id="main" class="flex min-h-screen flex-col">
+    <div data-include="partials/navbar.html"></div>
+
+    <main class="flex-1 space-y-6 p-4 sm:p-6 lg:p-8">
+      <div>
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">Forms</h2>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Form controls, layouts and a jQuery-validated example.</p>
+      </div>
+
+      <div class="grid gap-6 xl:grid-cols-2">
+        <!-- Inputs -->
+        <section class="rounded-2xl border border-slate-200 bg-white p-6 shadow-card dark:border-slate-800 dark:bg-slate-900">
+          <h3 class="text-base font-semibold text-slate-900 dark:text-white">Text inputs</h3>
+          <div class="mt-5 space-y-5">
+            <div>
+              <label for="in-basic" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">Default</label>
+              <input id="in-basic" type="text" placeholder="Jane Cooper" class="w-full rounded-lg border-slate-200 bg-white text-sm placeholder:text-slate-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+              <p class="mt-1.5 text-xs text-slate-500 dark:text-slate-400">Helper text goes here.</p>
+            </div>
+            <div>
+              <label for="in-icon" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">With icon</label>
+              <div class="relative">
+                <i data-lucide="mail" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"></i>
+                <input id="in-icon" type="email" placeholder="you@example.com" class="w-full rounded-lg border-slate-200 bg-white pl-9 text-sm placeholder:text-slate-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+              </div>
+            </div>
+            <div>
+              <label for="in-addon" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">With add-on</label>
+              <div class="flex rounded-lg shadow-sm">
+                <span class="inline-flex items-center rounded-l-lg border border-r-0 border-slate-200 bg-slate-50 px-3 text-sm text-slate-500 dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-400">https://</span>
+                <input id="in-addon" type="text" placeholder="yoursite.com" class="w-full min-w-0 rounded-r-lg border-slate-200 bg-white text-sm placeholder:text-slate-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+              </div>
+            </div>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="in-error" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">Error state</label>
+                <input id="in-error" type="text" value="bad value" aria-invalid="true" class="w-full rounded-lg border-red-400 bg-white text-sm text-red-900 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 dark:border-red-500/60 dark:bg-slate-800 dark:text-red-300">
+                <p class="mt-1.5 text-xs text-red-600 dark:text-red-400">This field is invalid.</p>
+              </div>
+              <div>
+                <label for="in-success" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">Success state</label>
+                <input id="in-success" type="text" value="looks good" class="w-full rounded-lg border-emerald-400 bg-white text-sm focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 dark:border-emerald-500/60 dark:bg-slate-800 dark:text-slate-200">
+                <p class="mt-1.5 text-xs text-emerald-600 dark:text-emerald-400">Username is available.</p>
+              </div>
+            </div>
+            <div>
+              <label for="in-disabled" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">Disabled</label>
+              <input id="in-disabled" type="text" value="Read only value" disabled class="w-full cursor-not-allowed rounded-lg border-slate-200 bg-slate-100 text-sm text-slate-500 dark:border-slate-700 dark:bg-slate-800/50 dark:text-slate-500">
+            </div>
+            <div>
+              <label for="in-textarea" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">Textarea <span class="font-normal text-slate-400">(<span data-count-for="in-textarea">0</span>/200)</span></label>
+              <textarea id="in-textarea" rows="3" maxlength="200" placeholder="Write something…" class="w-full rounded-lg border-slate-200 bg-white text-sm placeholder:text-slate-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Selections -->
+        <section class="rounded-2xl border border-slate-200 bg-white p-6 shadow-card dark:border-slate-800 dark:bg-slate-900">
+          <h3 class="text-base font-semibold text-slate-900 dark:text-white">Selection controls</h3>
+          <div class="mt-5 space-y-6">
+            <div>
+              <label for="in-select" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">Select</label>
+              <select id="in-select" class="w-full rounded-lg border-slate-200 bg-white text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+                <option>Indonesia</option><option>Singapore</option><option>Malaysia</option><option>Japan</option>
+              </select>
+            </div>
+
+            <fieldset>
+              <legend class="mb-2 text-sm font-medium text-slate-700 dark:text-slate-300">Checkboxes</legend>
+              <div class="space-y-2.5">
+                <label class="flex items-start gap-3">
+                  <input type="checkbox" checked class="mt-0.5 h-4 w-4 rounded border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600 dark:bg-slate-800">
+                  <span class="text-sm"><span class="font-medium text-slate-700 dark:text-slate-200">Email notifications</span><span class="block text-slate-500 dark:text-slate-400">Get notified about new orders.</span></span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600 dark:bg-slate-800">
+                  <span class="text-sm"><span class="font-medium text-slate-700 dark:text-slate-200">Weekly digest</span><span class="block text-slate-500 dark:text-slate-400">A summary every Monday.</span></span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend class="mb-2 text-sm font-medium text-slate-700 dark:text-slate-300">Radio group</legend>
+              <div class="flex flex-wrap gap-5">
+                <label class="flex items-center gap-2 text-sm"><input type="radio" name="plan" checked class="h-4 w-4 border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600 dark:bg-slate-800"> Free</label>
+                <label class="flex items-center gap-2 text-sm"><input type="radio" name="plan" class="h-4 w-4 border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600 dark:bg-slate-800"> Pro</label>
+                <label class="flex items-center gap-2 text-sm"><input type="radio" name="plan" class="h-4 w-4 border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600 dark:bg-slate-800"> Enterprise</label>
+              </div>
+            </fieldset>
+
+            <div>
+              <p class="mb-2 text-sm font-medium text-slate-700 dark:text-slate-300">Radio cards</p>
+              <div class="grid gap-3 sm:grid-cols-3">
+                <label class="relative flex cursor-pointer flex-col rounded-xl border border-slate-200 p-4 hover:border-slate-300 has-[:checked]:border-primary-500 has-[:checked]:ring-2 has-[:checked]:ring-primary-500/20 dark:border-slate-700">
+                  <input type="radio" name="tier" class="sr-only" checked>
+                  <span class="text-sm font-semibold text-slate-900 dark:text-white">Starter</span>
+                  <span class="mt-1 text-xs text-slate-500 dark:text-slate-400">$9 / month</span>
+                </label>
+                <label class="relative flex cursor-pointer flex-col rounded-xl border border-slate-200 p-4 hover:border-slate-300 has-[:checked]:border-primary-500 has-[:checked]:ring-2 has-[:checked]:ring-primary-500/20 dark:border-slate-700">
+                  <input type="radio" name="tier" class="sr-only">
+                  <span class="text-sm font-semibold text-slate-900 dark:text-white">Business</span>
+                  <span class="mt-1 text-xs text-slate-500 dark:text-slate-400">$29 / month</span>
+                </label>
+                <label class="relative flex cursor-pointer flex-col rounded-xl border border-slate-200 p-4 hover:border-slate-300 has-[:checked]:border-primary-500 has-[:checked]:ring-2 has-[:checked]:ring-primary-500/20 dark:border-slate-700">
+                  <input type="radio" name="tier" class="sr-only">
+                  <span class="text-sm font-semibold text-slate-900 dark:text-white">Scale</span>
+                  <span class="mt-1 text-xs text-slate-500 dark:text-slate-400">$99 / month</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="mb-2 text-sm font-medium text-slate-700 dark:text-slate-300">Toggle switch</p>
+              <label class="inline-flex cursor-pointer items-center gap-3">
+                <input type="checkbox" class="peer sr-only" checked>
+                <span class="relative h-6 w-11 rounded-full bg-slate-200 transition-colors after:absolute after:left-0.5 after:top-0.5 after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow after:transition-transform peer-checked:bg-primary-600 peer-checked:after:translate-x-5 peer-focus-visible:ring-2 peer-focus-visible:ring-primary-500/40 dark:bg-slate-700"></span>
+                <span class="text-sm text-slate-700 dark:text-slate-200">Enable two-factor auth</span>
+              </label>
+            </div>
+
+            <div>
+              <label for="in-range" class="mb-2 flex justify-between text-sm font-medium text-slate-700 dark:text-slate-300">Range <span data-range-out class="tabular-nums text-slate-500">50</span></label>
+              <input id="in-range" type="range" min="0" max="100" value="50" class="w-full accent-primary-600">
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- File upload -->
+      <section class="rounded-2xl border border-slate-200 bg-white p-6 shadow-card dark:border-slate-800 dark:bg-slate-900">
+        <h3 class="text-base font-semibold text-slate-900 dark:text-white">File upload</h3>
+        <label id="dropzone" for="in-file" class="mt-4 flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-200 px-6 py-10 text-center hover:border-primary-400 hover:bg-primary-50/40 dark:border-slate-700 dark:hover:border-primary-500 dark:hover:bg-primary-500/5">
+          <span class="flex h-11 w-11 items-center justify-center rounded-full bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-400"><i data-lucide="upload-cloud" class="h-5 w-5"></i></span>
+          <span class="mt-3 text-sm font-medium text-slate-700 dark:text-slate-200"><span class="text-primary-600 dark:text-primary-400">Click to upload</span> or drag and drop</span>
+          <span class="mt-1 text-xs text-slate-500 dark:text-slate-400">PNG, JPG or PDF up to 10MB</span>
+          <input id="in-file" type="file" multiple class="sr-only">
+        </label>
+        <ul id="file-list" class="mt-3 space-y-2 text-sm"></ul>
+      </section>
+
+      <!-- Validated form -->
+      <section class="rounded-2xl border border-slate-200 bg-white shadow-card dark:border-slate-800 dark:bg-slate-900">
+        <div class="border-b border-slate-200 px-6 py-4 dark:border-slate-800">
+          <h3 class="text-base font-semibold text-slate-900 dark:text-white">Profile settings</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Example form with jQuery validation. Try submitting it empty.</p>
+        </div>
+        <form id="profile-form" class="grid gap-5 p-6 md:grid-cols-2" novalidate>
+          <div>
+            <label for="p-first" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">First name <span class="text-red-500">*</span></label>
+            <input id="p-first" name="first" required class="w-full rounded-lg border-slate-200 bg-white text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+          </div>
+          <div>
+            <label for="p-last" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">Last name <span class="text-red-500">*</span></label>
+            <input id="p-last" name="last" required class="w-full rounded-lg border-slate-200 bg-white text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+          </div>
+          <div>
+            <label for="p-email" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">Email <span class="text-red-500">*</span></label>
+            <input id="p-email" name="email" type="email" required class="w-full rounded-lg border-slate-200 bg-white text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+          </div>
+          <div>
+            <label for="p-phone" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">Phone</label>
+            <input id="p-phone" name="phone" type="tel" pattern="[0-9+\- ]{6,}" placeholder="+62 812 3456 7890" class="w-full rounded-lg border-slate-200 bg-white text-sm placeholder:text-slate-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+          </div>
+          <div class="md:col-span-2">
+            <label for="p-bio" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">Bio</label>
+            <textarea id="p-bio" name="bio" rows="3" minlength="10" class="w-full rounded-lg border-slate-200 bg-white text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"></textarea>
+          </div>
+          <label class="flex items-center gap-2 text-sm md:col-span-2">
+            <input type="checkbox" name="terms" required class="h-4 w-4 rounded border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600 dark:bg-slate-800">
+            I agree to the terms and conditions <span class="text-red-500">*</span>
+          </label>
+          <div class="flex justify-end gap-2 md:col-span-2">
+            <button type="reset" class="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">Reset</button>
+            <button type="submit" class="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-700 disabled:opacity-60">
+              <svg data-spinner class="hidden h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-opacity=".25" stroke-width="4"/><path d="M22 12a10 10 0 0 0-10-10" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+              Save changes
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <div data-include="partials/footer.html"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/validate.js"></script>
+  <script>
+    App.ready(function ($) {
+      // Character counter
+      $('#in-textarea').on('input', function () { $('[data-count-for="in-textarea"]').text(this.value.length); });
+
+      // Range output
+      $('#in-range').on('input', function () { $('[data-range-out]').text(this.value); });
+
+      // File upload list + drag & drop
+      function listFiles(files) {
+        $('#file-list').html($.map(files, function (f) {
+          var li = $('<li class="flex items-center gap-3 rounded-lg border border-slate-200 px-3 py-2 dark:border-slate-800"><i data-lucide="file" class="h-4 w-4 text-slate-400"></i><span class="name flex-1 truncate"></span><span class="size text-xs text-slate-500"></span></li>');
+          li.find('.name').text(f.name);
+          li.find('.size').text((f.size / 1024).toFixed(1) + ' KB');
+          return li[0].outerHTML;
+        }).join(''));
+        App.icons();
+      }
+      $('#in-file').on('change', function () { listFiles(this.files); });
+      $('#dropzone')
+        .on('dragover', function (e) { e.preventDefault(); $(this).addClass('border-primary-500 bg-primary-50/60 dark:bg-primary-500/10'); })
+        .on('dragleave drop', function () { $(this).removeClass('border-primary-500 bg-primary-50/60 dark:bg-primary-500/10'); })
+        .on('drop', function (e) {
+          e.preventDefault();
+          var files = e.originalEvent.dataTransfer.files;
+          $('#in-file')[0].files = files;
+          listFiles(files);
+        });
+
+      // Validated form
+      $('#profile-form').formValidate({
+        onValid: function ($form, data) {
+          var $btn = $form.find('[type=submit]').prop('disabled', true);
+          $btn.find('[data-spinner]').removeClass('hidden');
+          // Simulate a request - replace with $.post('/api/profile', data)
+          setTimeout(function () {
+            $btn.prop('disabled', false).find('[data-spinner]').addClass('hidden');
+            App.toast('Profile saved for ' + data.first + ' ' + data.last, 'success');
+          }, 900);
+        },
+      });
+    });
+  </script>
+</body>
+</html>

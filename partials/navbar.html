@@ -1,0 +1,74 @@
+<header class="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-slate-200 bg-white/80 px-4 backdrop-blur sm:px-6 dark:border-slate-800 dark:bg-slate-900/80">
+  <button type="button" data-sidebar-toggle class="rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white" aria-label="Toggle sidebar">
+    <i data-lucide="panel-left" class="h-5 w-5"></i>
+  </button>
+
+  <h1 data-page-title class="hidden shrink-0 text-base font-semibold text-slate-900 md:block dark:text-white"></h1>
+
+  <!-- Search -->
+  <div class="relative ml-auto w-full min-w-0 max-w-xs md:ml-6">
+    <i data-lucide="search" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"></i>
+    <input type="search" data-global-search placeholder="Search…" class="w-full rounded-lg border border-slate-200 bg-slate-50 py-2 pl-9 pr-14 text-sm placeholder:text-slate-400 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:focus:bg-slate-800">
+    <kbd class="pointer-events-none absolute right-2 top-1/2 hidden -translate-y-1/2 rounded border border-slate-200 bg-white px-1.5 py-0.5 text-[10px] font-medium text-slate-400 sm:block dark:border-slate-700 dark:bg-slate-900">Ctrl K</kbd>
+  </div>
+
+  <div class="flex items-center gap-1 md:ml-auto">
+    <!-- Theme toggle -->
+    <button type="button" data-theme-toggle class="rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white" aria-label="Toggle dark mode">
+      <i data-lucide="moon" class="h-5 w-5 dark:hidden"></i>
+      <i data-lucide="sun" class="hidden h-5 w-5 dark:block"></i>
+    </button>
+
+    <!-- Notifications -->
+    <div class="relative">
+      <button type="button" data-dropdown-toggle="dd-notifications" aria-expanded="false" class="relative rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white" aria-label="Notifications">
+        <i data-lucide="bell" class="h-5 w-5"></i>
+        <span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-red-500 ring-2 ring-white dark:ring-slate-900"></span>
+      </button>
+      <div id="dd-notifications" class="dropdown-menu absolute right-0 mt-2 hidden w-80 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg dark:border-slate-800 dark:bg-slate-900">
+        <div class="flex items-center justify-between border-b border-slate-200 px-4 py-3 dark:border-slate-800">
+          <p class="text-sm font-semibold text-slate-900 dark:text-white">Notifications</p>
+          <button type="button" data-dropdown-close data-toast="All marked as read" data-toast-type="success" class="text-xs font-medium text-primary-600 hover:text-primary-700 dark:text-primary-400">Mark all read</button>
+        </div>
+        <ul class="max-h-80 divide-y divide-slate-100 overflow-y-auto dark:divide-slate-800">
+          <li class="flex gap-3 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/50">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400"><i data-lucide="shopping-bag" class="h-4 w-4"></i></span>
+            <div class="text-sm"><p class="text-slate-700 dark:text-slate-200">New order <b>#1042</b> received</p><p class="text-xs text-slate-400">2 min ago</p></div>
+          </li>
+          <li class="flex gap-3 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/50">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sky-600 dark:bg-sky-500/10 dark:text-sky-400"><i data-lucide="user-plus" class="h-4 w-4"></i></span>
+            <div class="text-sm"><p class="text-slate-700 dark:text-slate-200">3 new users signed up</p><p class="text-xs text-slate-400">1 hour ago</p></div>
+          </li>
+          <li class="flex gap-3 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/50">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400"><i data-lucide="alert-triangle" class="h-4 w-4"></i></span>
+            <div class="text-sm"><p class="text-slate-700 dark:text-slate-200">Server CPU at 85%</p><p class="text-xs text-slate-400">Yesterday</p></div>
+          </li>
+        </ul>
+        <a href="#" class="block border-t border-slate-200 px-4 py-2.5 text-center text-sm font-medium text-slate-600 hover:bg-slate-50 dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-800/50">View all</a>
+      </div>
+    </div>
+
+    <!-- User menu -->
+    <div class="relative ml-1">
+      <button type="button" data-dropdown-toggle="dd-user" aria-expanded="false" class="flex items-center gap-2 rounded-lg p-1 pr-2 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-primary-100 text-sm font-semibold text-primary-700 dark:bg-primary-500/15 dark:text-primary-300">JD</span>
+        <span class="hidden whitespace-nowrap text-left sm:block">
+          <span class="block text-sm font-medium leading-tight text-slate-900 dark:text-white">John Doe</span>
+          <span class="block text-xs leading-tight text-slate-500 dark:text-slate-400">Admin</span>
+        </span>
+        <i data-lucide="chevron-down" class="hidden h-4 w-4 text-slate-400 sm:block"></i>
+      </button>
+      <div id="dd-user" class="dropdown-menu absolute right-0 mt-2 hidden w-56 rounded-xl border border-slate-200 bg-white p-1.5 shadow-lg dark:border-slate-800 dark:bg-slate-900">
+        <div class="px-3 py-2">
+          <p class="text-sm font-medium text-slate-900 dark:text-white">John Doe</p>
+          <p class="truncate text-xs text-slate-500 dark:text-slate-400">john@example.com</p>
+        </div>
+        <div class="my-1 h-px bg-slate-100 dark:bg-slate-800"></div>
+        <a href="#" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"><i data-lucide="user" class="h-4 w-4"></i> Profile</a>
+        <a href="#" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"><i data-lucide="settings" class="h-4 w-4"></i> Settings</a>
+        <div class="my-1 h-px bg-slate-100 dark:bg-slate-800"></div>
+        <a href="login.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-500/10"><i data-lucide="log-out" class="h-4 w-4"></i> Sign out</a>
+      </div>
+    </div>
+  </div>
+</header>
